@@ -1,0 +1,137 @@
+Automation tool CI/CD:
+
+Code --> Build --> Test   = CI
+(FD,BD-2-v1) --> (FD-1-v1) --> (Tester-1-v1) - Error
+(FD,BD-3-v2) --> (FD-1-v2) --> (Tester-2-v3)
+
+1. Time taking
+2. Engaged resources & manpower
+3. Delay in software delivery
+
+-------------------------------------------------------
+
+CD: Continues delivery/Deployment ?
+
+Code --> Build --> Test PASS --> Deploy = CD
+-------------------------------------------------------
+
+CI/CD: Application server/docker container/pods
+
+-----------------------------------------------------
+
+CICD: SDLC easy
+---------------
+1. Jenkins
+2. AWS Code pipeline
+3. Azure pipeline
+4. Gitlab Pipeline
+5. GitHub Action
+
+-------------------------------------------------------
+
+Jenkins: script
+1. Server --> Jenkins App --> Console GUI --> [Pipeline (script App deploy)]
+-------------------------------------------------------
+
+Git
+GitHub
+SSH
+permissions
+how to manage multiple repository
+Private
+Token access
+--------------------------------------------------------
+
+Env:
+
+ 1 Project --> End user
+
+ Code --> build --> test --> deploy
+
+    Env- Dev    ----- server-1 (ap-south-1a)
+    Env- Test   ----- server-2 (ap-south-1a) sonarqube app -> test
+    Env- UAT    ----- server-3 (ap-south-1a) UAT -- succedd
+---------------------------------------------------------------------
+    Env- Prod   ----- server-4 ALB, AS (ap-south-1a)    -- End user
+-------------------------------------------------------------------
+
+
+Jenkins: ec2 instance
+
+Pull: Remote repository, GitHub/Gitlab,Git
+Build: Maven (code language) compile: code, code smell, build, hierarchy app development lyc, pom.xml (depend, libraries)
+Test: sonarqube App ------> saperate server
+Deploy: server
+==============================================================================================================================
+
+Repository managment:
+
+1. Public repo --> not required cred
+2. Private repo --> required cred, (Token, remote server- github password)
+        Create token for private repo......
+
+-----------------------------------------------------------------------------------------
+
+1. Jenkins Master 3.201.82.69 --> 13.126.44.226 Slave-01 --> Jobs (Public/Priavte repo, txt file deploy)
+  Help of Labels:
+    Jenkins App --> Node add (Public IP & Priavte key) --> status ok
+----------------------------------------------------------------------------------------
+2. Understand the job configuraiton options and it's behaviour
+
+----------------------------------------------------------------------------------------
+3. Build pipeline
+=================================================================================================================
+
+
+1. App source code PULL done.........
+2. Build (Build tool: maven java badsed)
+
+      1. Applicaiton development lifecyle understantd developers
+      2. Maven install & configure server    ----- Master server
+      3. will create maven based Project (student.ui)
+      4. code build using maven commands......................................
+          mvn package (.war)
+
+          error: applicaiton develop with --> bellsoft java   ///  server java install from openjdk 17.0.11 2024-04-16
+
+          Build App java bellsoft java //// server belsoft
+
+
+      5. will get o/p of .war files
+
+==============================================================================================================
+
+
+Test stage: sonarqube port no: 9000
+
+Code --> Pull --> Build --> Test (App: Sonarqube App)
+
+    Infrastructure server --> Sonarqube App deploy --> App (code test)
+
+===============================================================================================================    
+
+PUll --> Build --> Test = CI
+
+Deploy --> Continuous Delivery & Contineous Deployment
+
+=============
+
+Infrastructure server --> tomcat (java) --> artifact deploy //////
+
+jenkins pipeline add --> script / pipeline syntax generator.....
+
+plugin: Deploy to container (.war/.jar) --> webapps
+================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
